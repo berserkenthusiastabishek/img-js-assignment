@@ -5,10 +5,15 @@
 }
 #main-table
 {
-    display: grid;
-    grid-template: repeat(6, 1fr)/repeat(4, 1fr) 2fr;
+    width : 100%;
+    display: flex;
+    flex-flow : row wrap;
 }
-img
+.user
 {
-    display: block;
+    height : 10rem;
+    display : grid;
+    width : 40%;
+    grid-template-rows : 5fr 1fr 1fr;
+
 }
