@@ -1,0 +1,14 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+#main-table
+{
+    display: grid;
+    grid-template: repeat(6, 1fr)/repeat(4, 1fr) 2fr;
+}
+img
+{
+    display: block;
+}

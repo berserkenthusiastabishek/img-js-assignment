@@ -1,0 +1,65 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+button
+{
+    padding : 1rem;
+    border-radius: 0.5rem;
+    display: block;
+    width: 40%;
+    margin: 4rem auto;
+}
+h1
+{
+    width : fit-content;
+    margin: 2rem auto;
+}
+#empty-field
+{
+    display: none;
+    width : fit-content;
+    margin: 2rem auto;
+}
+form
+{
+    background-color: rgb(178, 193, 221);
+    width : 80%;
+    height : 50rem;
+    display: grid;
+    grid-template: repeat(9, 1fr)/ 1fr 5fr;
+    margin : 0px auto;
+}
+input
+{
+    width: 60%;
+    justify-self: center;
+    display: block;
+    height : 20%;
+}
+.error-prone
+{
+    width : 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-self: center;
+}
+.error-prone input
+{
+    width : 100%;
+}
+.error-msg
+{
+    display: none;
+    margin-bottom : 2rem;
+}
+p
+{
+    padding-left : 1rem;
+}
+.select-input
+{
+    justify-self: center;
+}

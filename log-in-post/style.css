@@ -1,0 +1,30 @@
+*
+{
+    margin : 0px;
+    padding: 0px;
+}
+h1, h2
+{
+    width: fit-content;
+    margin : 2rem auto;
+}
+form
+{
+    width : 80%;
+    margin : auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form input
+{
+    margin : 1rem 0rem;
+    width : 40%;
+}
+button
+{
+    display: block;
+    width : 20%;
+    padding : 1rem;
+    margin: 2rem auto;
+}
