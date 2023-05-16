@@ -21,7 +21,7 @@ const getData = async () => {
     let pfp = document.createElement("img");
     pfp.src = avatar;
     pfpContainer.appendChild(pfp);
-    let name = document.createTextNode(`${first_name} + ${last_name}`);
+    let name = document.createTextNode(`${first_name} ${last_name}`);
     nameContainer.appendChild(name);
     let userEmail = document.createTextNode(email);
     emailContainer.appendChild(userEmail);
