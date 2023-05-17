@@ -1,3 +1,5 @@
+const { error } = require("console");
+
 const confirmPwdDOM = document.getElementById("confirm-pwd");
 const pwdDOM = document.getElementById("pwd");
 const phnoDOM = document.getElementById("phno");
@@ -15,35 +17,36 @@ const checkPHNO = (userNo) => {
   const phRegex = /\b\+?(91)?\d{10}\b/;
   return phRegex.test(userNo);
 };
+const toggleOn = (message) => {
+  message.style.display = "block";
+};
+const toggleOff = (message) => {
+  message.style.display = "none";
+};
 emailDOM.addEventListener("input", () => {
   if (emailDOM.value && !checkEmail(emailDOM.value)) {
-    errorMessages[1].style.display = "block";
+    toggleOn(errorMessages[1]);
   } else {
-    errorMessages[1].style.display = "none";
+    toggleOff(errorMessages[1]);
   }
 });
 phnoDOM.addEventListener("input", () => {
   if (phnoDOM.value && !checkPHNO(phnoDOM.value)) {
-    errorMessages[0].style.display = "block";
+    toggleOn(errorMessages[0]);
   } else {
-    errorMessages[0].style.display = "none";
+    toggleOff(errorMessages[0]);
   }
 });
 btn.addEventListener("click", (e) => {
   e.preventDefault();
   for (let i = 0; i < inputFields.length; i++) {
-    if (!inputFields[i].value) {
-      invalidCreds.style.display = "block";
-      errorMessages[2].style.display = "none";
+    if (!inputFields[i].value || !qualSelector.value) {
+      toggleOn(invalidCreds);
+      toggleOff(errorMessages[2]);
       return;
     }
   }
-  if (!qualSelector.value) {
-    invalidCreds.style.display = "block";
-    errorMessages[2].style.display = "none";
-    return;
-  }
-  invalidCreds.style.display = "none";
+  toggleOff(invalidCreds);
   if (
     errorMessages[0].style.display === "block" ||
     errorMessages[1].style.display === "block"
@@ -51,8 +54,8 @@ btn.addEventListener("click", (e) => {
     return;
   }
   if (pwdDOM.value !== confirmPwdDOM.value) {
-    errorMessages[2].style.display = "block";
+    toggleOn(errorMessages[2]);
     return;
   }
-  errorMessages[2].style.display = "none";
+  toggleOff(errorMessages[2]);
 });
