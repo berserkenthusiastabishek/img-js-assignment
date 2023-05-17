@@ -12,7 +12,7 @@ const checkEmail = (userEmail) => {
   return emailRegex.test(userEmail);
 };
 const checkPHNO = (userNo) => {
-  const phRegex = /\d{10}/;
+  const phRegex = /\b\+?(91)?\d{10}\b/;
   return phRegex.test(userNo);
 };
 emailDOM.addEventListener("input", () => {
