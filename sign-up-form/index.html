@@ -17,9 +17,9 @@
     <h2 id="empty-field">
         One or more of the fields are empty, please fill all fields.
     </h2>
-    <form id = "main-form">
+    <form id="main-form">
         <p>Educational qualifications</p>
-        <div class = "select-input">
+        <div class="select-input">
             <select name="qualifications" id="qualifications">
                 <option value="">--Select your qualification--</option>
                 <option value="hs">Currently in high school</option>
@@ -31,35 +31,55 @@
         </div>
         <p>Phone Number</p>
         <div class="error-prone">
-        <input type="text" id="phno">
-        <div class="error-msg">
-            Invalid phone number.
-        </div>
+            <input type="text" id="phno">
+            <div class="error-msg">
+                Invalid phone number.
+            </div>
         </div>
         <p>Age</p>
-        <input type="number" id="age">
+        <div class="error-prone">
+            <input type="text" id="age">
+            <div class="error-msg">
+                Please enter a valid age.
+            </div>
+        </div>
         <p>Gender</p>
         <input type="text" id="gender">
         <p>Email</p>
         <div class="error-prone">
-        <input type="text" id="email">
-        <div class="error-msg">
-            Invalid email.
-        </div>
+            <input type="text" id="email">
+            <div class="error-msg">
+                Invalid email.
+            </div>
         </div>
         <p>Password</p>
-        <input type="password" id="pwd">
+        <div class="error-prone">
+            <input type="password" id="pwd">
+            <div class="error-msg">
+                Must contain at least 6 characters.
+            </div>
+        </div>
         <p>Confirm Password</p>
         <div class="error-prone">
-        <input type="password" id="confirm-pwd">
-        <div class="error-msg">
-            Please re-enter the password correctly.
-        </div>
+            <input type="password" id="confirm-pwd">
+            <div class="error-msg">
+                Please re-enter the password correctly.
+            </div>
         </div>
         <p>Name</p>
-        <input type="text" id="name">
+        <div class="error-prone">
+            <input type="text" id="name">
+            <div class="error-msg">
+            Please enter a valid name with alphabetic characters.
+            </div>
+        </div>
         <p>City</p>
-        <input type="text" id="city">
+        <div class="error-prone">
+            <input type="text" id="city">
+            <div class="error-msg">
+            City name cannot have non alphabetic characters.
+            </div>
+        </div>
     </form>
     <button id="submit" form="main-form" type="submit">Submit</button>
 </body>
