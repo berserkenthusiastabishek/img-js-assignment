@@ -13,7 +13,7 @@ const errorMessages = document.getElementsByClassName("error-msg");
 const checkField = (fieldVal, regex) => regex.test(fieldVal);
 const emailRegex = /\b\w+@\w+\.\w+\b/;
 const phRegex = /\b\+?(91)?\d{10}\b/;
-const ageRegex = /\b[1-9]+\b/;
+const ageRegex = /\b[1-9]([0-9]+)?\b/;
 const pwdRegex = /\w{6,}/;
 const nameRegex = /[A-Za-z]+/;
 const toggleOn = (message) => {
@@ -67,18 +67,23 @@ btn.addEventListener("click", (e) => {
     return;
   }
 
-  const errorArray = [];
-  for (let i = 0; i < errorMessages.length; i++) {
-    errorArray.push(errorMessages[i]);
-  }
-  if (errorArray.filter((error) => error.style.display === "block") !== []) {
-    alert("Please re-fill the invalid fields as indicated")
-    return;
-  }
   if (pwdDOM.value !== confirmPwdDOM.value) {
     toggleOn(errorMessages[4]);
     return;
   }
   toggleOff(errorMessages[4]);
+  if (
+    errorMessages[0].style.display === "block" ||
+    errorMessages[1].style.display === "block" ||
+    errorMessages[2].style.display === "block" ||
+    errorMessages[3].style.display === "block" ||
+    errorMessages[4].style.display === "block" ||
+    errorMessages[5].style.display === "block"
+  ) {
+    alert("Please re-fill the invalid fields as indicated");
+    return;
+  }
+
+ 
   alert("Your response has been recorded")
 });
